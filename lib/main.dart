@@ -4,6 +4,7 @@ import 'package:flutter_demo/widget/drag_a_letter.dart' deferred as drag_a_lette
 import 'package:flutter_demo/widget/wonderous_photo_gallery.dart' deferred as wonderous_photo_gallery_page;
 import 'package:flutter_demo/widget/reflect_widget_page.dart' deferred as reflect_widget_page_page;
 import 'package:flutter_demo/widget/custom_render_renderconstrainedbox.dart' deferred as renderconstrainedbox;
+import 'package:flutter_demo/widget/custom_multi_childrenderobject_widget.dart' deferred as custom_multi_childrenderobject;
 
 void main() {
   runApp(const MyApp());
@@ -76,7 +77,7 @@ Map<String,WidgetBuilder> routes = {
   "自定义renderBox": (context) {
     return ContainerAsyncRouterPage(custom_render_box_page.loadLibrary(),
             (context) {
-          return custom_render_box_page.CustomRenderBox();
+          return custom_render_box_page.CustomRenderBox(title: '自定义renderBox',);
         });
   },
   "拖拽示例": (context) {
@@ -103,6 +104,12 @@ Map<String,WidgetBuilder> routes = {
               return renderconstrainedbox.CustomRenderRenderconstrainedbox();
             });
       },
+  "自定义 MultiChildRenderObjectWidget 多孩儿布局":(context) {
+          return ContainerAsyncRouterPage(custom_multi_childrenderobject.loadLibrary(),
+                  (context) {
+                return custom_multi_childrenderobject.CustomMultiChildRenderObjectWidgetPage();
+              });
+        },
 
 };
 

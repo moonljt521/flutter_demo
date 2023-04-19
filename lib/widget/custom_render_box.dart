@@ -1,41 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import '../base/base_page.dart';
+
 
 /// 自定义一个renderBox， 继承自RenderShiftedBox（它的父类是renderBox）
-class CustomRenderBox extends StatefulWidget {
+class CustomRenderBox extends BasePage {
 
-  const CustomRenderBox({super.key});
+  CustomRenderBox({super.key , super.title});
 
   @override
   State<CustomRenderBox> createState() => _CustomRenderBoxPageState();
+
+  @override
+  State<StatefulWidget> create_state() {
+    return _CustomRenderBoxPageState();
+  }
 }
 
-class _CustomRenderBoxPageState extends State<CustomRenderBox> {
+class _CustomRenderBoxPageState extends BaseState<CustomRenderBox> {
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('自定义renderBox'),
-      ),
-      body: MyAlignWidget(
-        alignment: Alignment.bottomRight,
+  Widget pageBody(BuildContext context) {
+    return MyAlignWidget(
+        alignment: Alignment.centerRight,
         child: Container(
           width: 100,
           height: 50,
           color: Colors.red,
         )
-      ),
     );
   }
-}
 
+}
 
 class MyRenderShiftbox extends RenderShiftedBox {
 
