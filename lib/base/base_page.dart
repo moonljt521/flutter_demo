@@ -8,11 +8,31 @@ abstract class BasePage extends StatefulWidget {
 
   BasePage({super.key, this.title});
 
+  onCreate() {
+
+  }
+
+  onDestroy() {
+
+  }
+
   @override
   State<StatefulWidget> createState() => _State();
 }
 
 class _State extends State<BasePage> {
+
+  @override
+  void initState() {
+    super.initState();
+    widget.onCreate();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    widget.onDestroy();
+  }
 
   @override
   Widget build(BuildContext context) {

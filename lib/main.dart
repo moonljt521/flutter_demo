@@ -5,6 +5,7 @@ import 'package:flutter_demo/widget/wonderous_photo_gallery.dart' deferred as wo
 import 'package:flutter_demo/widget/reflect_widget_page.dart' deferred as reflect_widget_page_page;
 import 'package:flutter_demo/widget/custom_render_renderconstrainedbox.dart' deferred as renderconstrainedbox;
 import 'package:flutter_demo/widget/custom_multi_childrenderobject_widget.dart' deferred as custom_multi_childrenderobject;
+import 'package:flutter_demo/widget/stream_builder_page.dart' deferred as testStreambuilder;
 
 void main() {
   runApp(const MyApp());
@@ -110,6 +111,13 @@ Map<String,WidgetBuilder> routes = {
                 return custom_multi_childrenderobject.CustomMultiChildRenderObjectWidgetPage();
               });
         },
+
+  "测试StreamBuilder":(context) {
+    return ContainerAsyncRouterPage(testStreambuilder.loadLibrary(),
+            (context) {
+          return testStreambuilder.TestStreamBuilder(title: '测试StreamBuilder',);
+        });
+  },
 
 };
 
