@@ -4,30 +4,15 @@ abstract class BasePage extends StatefulWidget {
 
   final String? title;
 
+  Widget pageBody(BuildContext context);
+
   BasePage({super.key, this.title});
 
   @override
-  State<StatefulWidget> createState() {
-    return create_state();
-  }
-
-  State<StatefulWidget> create_state();
+  State<StatefulWidget> createState() => _State();
 }
 
-abstract class BaseState<T extends BasePage> extends State<T> {
-
-  void onCreate(){
-
-  }
-
-  //页面布局
-  Widget pageBody(BuildContext context);
-
-  @override
-  void initState() {
-    super.initState();
-    onCreate();
-  }
+class _State extends State<BasePage> {
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +20,7 @@ abstract class BaseState<T extends BasePage> extends State<T> {
       appBar: AppBar(
         title: Text(widget.title ?? ''),
       ),
-      body: pageBody(context),
+      body: widget.pageBody(context),
     );
   }
-
 }

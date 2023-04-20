@@ -10,17 +10,6 @@ class CustomRenderBox extends BasePage {
   CustomRenderBox({super.key , super.title});
 
   @override
-  State<CustomRenderBox> createState() => _CustomRenderBoxPageState();
-
-  @override
-  State<StatefulWidget> create_state() {
-    return _CustomRenderBoxPageState();
-  }
-}
-
-class _CustomRenderBoxPageState extends BaseState<CustomRenderBox> {
-
-  @override
   Widget pageBody(BuildContext context) {
     return MyAlignWidget(
         alignment: Alignment.centerRight,
@@ -31,8 +20,8 @@ class _CustomRenderBoxPageState extends BaseState<CustomRenderBox> {
         )
     );
   }
-
 }
+
 
 class MyRenderShiftbox extends RenderShiftedBox {
 

@@ -3,24 +3,15 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_demo/base/base_page.dart';
 
 /// 来自  https://github.com/gskinnerTeam/flutter-wonderous-app 上的一个 UI 效果
-class PhotoGalleryDemoPage extends StatefulWidget {
-  const PhotoGalleryDemoPage({Key? key}) : super(key: key);
+class PhotoGalleryDemoPage extends BasePage {
+
+  PhotoGalleryDemoPage({super.key , super.title});
 
   @override
-  State<PhotoGalleryDemoPage> createState() => _PhotoGalleryDemoPageState();
-}
-
-class _PhotoGalleryDemoPageState extends State<PhotoGalleryDemoPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('仿Wonderous相册效果'),
-      ),
-      body: PhotoGallery(),
-    );
+  Widget pageBody(BuildContext context) {
     return PhotoGallery();
   }
 }
