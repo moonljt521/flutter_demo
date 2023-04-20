@@ -89,7 +89,7 @@ Map<String,WidgetBuilder> routes = {
   "仿Wonderous相册效果":(context) {
     return ContainerAsyncRouterPage(wonderous_photo_gallery_page.loadLibrary(),
             (context) {
-          return wonderous_photo_gallery_page.PhotoGalleryDemoPage();
+          return wonderous_photo_gallery_page.PhotoGalleryDemoPage(title: '仿Wonderous相册效果',);
         });
   },
   "显示倒影":(context) {
