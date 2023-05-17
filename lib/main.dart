@@ -6,6 +6,7 @@ import 'package:flutter_demo/widget/reflect_widget_page.dart' deferred as reflec
 import 'package:flutter_demo/widget/custom_render_renderconstrainedbox.dart' deferred as renderconstrainedbox;
 import 'package:flutter_demo/widget/custom_multi_childrenderobject_widget.dart' deferred as custom_multi_childrenderobject;
 import 'package:flutter_demo/widget/stream_builder_page.dart' deferred as testStreambuilder;
+import 'package:flutter_demo/widget/zone_call_back.dart' deferred as zoneCallBackPage;
 
 void main() {
   runApp(const MyApp());
@@ -118,6 +119,15 @@ Map<String,WidgetBuilder> routes = {
           return testStreambuilder.TestStreamBuilder(title: '测试StreamBuilder',);
         });
   },
+
+
+  "测试Zone callback":(context) {
+    return ContainerAsyncRouterPage(zoneCallBackPage.loadLibrary(),
+            (context) {
+          return zoneCallBackPage.ZoneCallBackPage(title: '测试Zone callback',);
+        });
+  },
+
 
 };
 
